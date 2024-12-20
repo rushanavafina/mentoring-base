@@ -2,38 +2,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; 
+    height: 80px;
     color: white;
     background-color: #4B565E;
-    padding: 0 240px;
+    padding: 0 140px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
+
         .header-logo {
             margin-right: 20px;
         }
-} 
-    
+}
+
 .header-nav {
     display: flex;
 }
 
-.header-nav-item {
+.header-nav-btn {
     margin-right: 20px;
+    border: none;
+    background-color: #4B565E;
+    color: white;
 }
 
 .header-right {
 display: flex;
 align-items: center;
 justify-content: center;
-    .header-right-phone {
+
+    .phone {
         margin-right: 10px ;
     }
-    .header-right-heart {
+
+    .phone-number {
+        color: white;
+    }
+
+    .heart {
         margin-left: 25px;
     }
+
     .touch {
         display: flex;
         align-items: center;
@@ -45,7 +56,8 @@ justify-content: center;
         width: 126px;
         justify-content: center;
         margin-left: 30px;
-        .span-touch {
+
+        .empty {
             margin-left: 10px;
         }
     }
@@ -55,21 +67,27 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 48px; 
+    height: 48px;
     background-color: #F0BA4E;
-    padding: 0 240px;  
+    padding: 0 140px;
+
     .header-2-left {
     display: flex;
     align-items: center;
     }
+
     .header-2-line {
     margin-right: 10px;
     }
+
     .header-2-nav {
     display: flex;
     }
-    .header-2-nav-item {
-     margin-right: 20px;   
+
+    .header-2-nav-btn {
+     margin-right: 20px;
+     border: none;
+     background-color: #F0BA4E;
     }
 }
 
@@ -98,7 +116,11 @@ justify-content: center;
     border: none;
 }
 
+.map {
+    display: flex;
+}
+
 .coutry{
     background-color: #F0BA4E;
-    border: none;  
+    border: none;
 }
