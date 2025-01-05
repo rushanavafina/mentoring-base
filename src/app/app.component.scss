@@ -130,6 +130,11 @@ justify-content: center;
     border: none;
 }
 
+.but {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .baner {
   max-width: 1920px;
   margin: 0 auto;
@@ -172,6 +177,7 @@ justify-content: center;
 .active-button {
   color: #F0BA4E;
   font-weight: 600;
+  padding-bottom: 16px;
 }
 
 .item-cards__grid {
