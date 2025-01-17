@@ -1,0 +1,9 @@
+<div class="inscription">
+    <b>КОМПОНЕНТ СПИСКА ЗАДАЧ</b>
+</div>
+
+<div class="list">
+    <div *ngFor="let todo of todos">
+        <app-todo-card [todo]="todo" (deleteTodo)="deletoTodo($event)"></app-todo-card>
+    </div>
+</div>
