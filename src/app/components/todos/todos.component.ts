@@ -31,5 +31,3 @@ deletoTodo(id: number) {
     todo => todo.id !== id);
     }
 }
-export { Todo };
-
