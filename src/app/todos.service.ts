@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { Todo } from "./components/todos/todos.component";
+import { Todo } from "./todo-interface";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
@@ -25,7 +25,7 @@ export class TodosService {
     
         deleteTodo(id: number) {
              this.todosSubject$.next(
-                this.todosSubject$.value.filter(item => item.id !== id)
+                this.todosSubject$.value.filter(todo => todo.id !== id)
               )
         }
 }

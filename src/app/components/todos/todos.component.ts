@@ -16,7 +16,6 @@ import { TodosService } from '../../todos.service';
 })
 
 export class TodosComponent {
-[x: string]: any;
 readonly todosApiService = inject(TodosApiService);
 readonly todosService = inject(TodosService);
 
@@ -33,4 +32,4 @@ deleteTodo(id: number) {
     }
 }
 
-export { Todo };
+

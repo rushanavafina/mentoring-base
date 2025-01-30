@@ -25,7 +25,7 @@ export class UsersService {
 
     deleteUser(id: number) {
          this.usersSubject$.next(
-            this.usersSubject$.value.filter(item => item.id !== id)
+            this.usersSubject$.value.filter(user => user.id !== id)
           )
     }
 }
