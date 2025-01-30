@@ -4,6 +4,7 @@ import { User } from "./components/users/users.component";
 
 @Injectable({providedIn: 'root'})
 export class UsersApiService {
+    [x: string]: any;
     readonly apiService  = inject(HttpClient);
 
     getUsers() {
