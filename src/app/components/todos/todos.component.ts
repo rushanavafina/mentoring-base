@@ -5,11 +5,10 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { Todo } from '../../todo-interface';
 import { TodosService } from '../../todos.service';
 
-
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [NgFor, TodoCardComponent, AsyncPipe],
+  imports: [NgFor, TodoCardComponent, AsyncPipe,],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -30,6 +29,9 @@ constructor() {
 deleteTodo(id: number) {
   this.todosService.deleteTodo(id);
     }
-}
+  }
 
 
+
+export { Todo };
+ 
