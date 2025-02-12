@@ -29,14 +29,10 @@ export class CreateTodoFormComponent {
    completed: new FormControl('', [Validators.required, completedValidator()]),
  });
 
-  private getCompletedValue(): boolean {
-  const value = this.form.get('completed')?.value!.trim().toLowerCase();
-  if (value === 'да')
-    return true;
-  else return false;
+ private getCompletedValue(): boolean {
+  return this.form.get('completed')?.value!.trim().toLowerCase() === 'да';
 }
 
- 
  public submitForm(): void {
    this.createUser.emit({...this.form.value, completed: this.getCompletedValue()});
    this.form.reset();

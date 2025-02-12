@@ -4,7 +4,7 @@ import { UsersApiService } from "../../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../../users.service";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
-import { User } from "../../interface/user-interface";
+import { createUser, User } from "../../interface/user-interface";
 
 
 
@@ -29,30 +29,22 @@ export class UsersComponent {
       (response: User[]) => {
         this.usersService.setUsers(response);  
       });
-      
-      this.usersService.users$.subscribe((users) => console.log(users));
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
 
-  public createUser(formDate: any) {
+  public createUser(formDate: createUser) {
     this.usersService.createUser({
       id: new Date().getTime(),
       name: formDate.name,
       email: formDate.email,
       website: formDate.website,
       company: {
-        name: formDate.companyName,
+        name: formDate.company.name,
       }
     });
-    console.log('ДАННЫЕ ФОРМЫ: ', event);
-    console.log(new Date().getTime());
-  }
-
-  getTodoAuthor(id: number) {
-    
   }
 }
 

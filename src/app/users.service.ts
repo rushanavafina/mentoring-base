@@ -22,7 +22,6 @@ export class UsersService {
             (currentElement) => currentElement.email === user.email
         );
 
-        console.log(existingUser);
 
         if (existingUser !== undefined) {
             alert('ТАКОЙ EMAIL УЖЕ ЗАРЕГИСТРИРОВАН');

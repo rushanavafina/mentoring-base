@@ -1,6 +1,3 @@
-<!-- <div class="inscription">
-    <b>КОМПОНЕНТ СПИСКА ЗАДАЧ</b>
-</div> -->
 <app-create-todo-form (createUser)="createUser($event)"></app-create-todo-form>
 <div class="list">
     <div *ngFor="let todo of todosService.todos$ | async">
