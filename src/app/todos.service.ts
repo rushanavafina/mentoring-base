@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { Todo } from "./todo-interface";
+import { Todo } from "./interface/todo-interface";
 
 @Injectable({providedIn: 'root'})
 export class TodosService {
@@ -8,7 +8,7 @@ export class TodosService {
     todos$ = this.todosSubject$.asObservable();
 
     setTodos(todos: Todo[]) {
-        this.todosSubject$.next(todos)
+        this.todosSubject$.next(todos.slice(0, 10))
     }
 
     editTodo(editedTodo: Todo) {

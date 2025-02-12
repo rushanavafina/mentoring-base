@@ -4,30 +4,9 @@ import { UsersApiService } from "../../users-api.service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../../users.service";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
+import { User } from "../../interface/user-interface";
 
-export interface User {
-  id:       number;
-  name:     string;
-  username: string;
-  email:    string;
-  address: {
-      street:  string;
-      suite:   string;
-      city:    string;
-      zipcode: string;
-      geo: {
-          lat: string;
-          lng: string;
-      };
-  };
-  phone:   string;
-  website: string;
-  company: {
-      name:        string;
-      catchPhrase: string;
-      bs:          string;
-  };
-}
+
 
 @Component({
   selector: 'app-users',
@@ -39,18 +18,41 @@ export interface User {
 })
 
 export class UsersComponent {
+ 
   readonly usersApiService = inject(UsersApiService);
+
   readonly usersService = inject(UsersService);
+
 
   constructor() {
     this.usersApiService.getUsers().subscribe(
       (response: User[]) => {
         this.usersService.setUsers(response);  
-      }
-    )
+      });
+      
+      this.usersService.users$.subscribe((users) => console.log(users));
   }
 
   deleteUser(id: number) {
     this.usersService.deleteUser(id);
   }
+
+  public createUser(formDate: any) {
+    this.usersService.createUser({
+      id: new Date().getTime(),
+      name: formDate.name,
+      email: formDate.email,
+      website: formDate.website,
+      company: {
+        name: formDate.companyName,
+      }
+    });
+    console.log('ДАННЫЕ ФОРМЫ: ', event);
+    console.log(new Date().getTime());
+  }
+
+  getTodoAuthor(id: number) {
+    
+  }
 }
+
