@@ -1,10 +1,9 @@
-<!-- <div class="inscription">
-  <b>КОМПОНЕНТ СПИСКА ЮЗЕРОВ</b>
-</div> -->
-<app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
-<div class="list">
+<app-button-create-user  (createUser)="createUser($event)"></app-button-create-user>
+<div class="list"> 
   <div *ngFor="let user of usersService.users$ | async" class="list-cards">
-    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"></app-user-card>
+    <app-user-card [user]="user" (deleteUser)="deleteUser($event)"
+    (editUser)="editUser($event)"></app-user-card>
   </div>
 </div>
+
 
