@@ -3,5 +3,6 @@
     <p>{{user.email}} </p>
     <p>{{user.website}} </p>
     <p>{{user.company.name}}</p>
-    <button (click)="onDeleteUser(user.id)" class="key">УДАЛИТЬ ЮЗЕРА</button>
+    <button mat-button (click)="openDeleteDialog()" class="key">delete</button>
+    <button mat-button (click)="openDialog()" class="key_1">edit</button>
 </div>

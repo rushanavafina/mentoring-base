@@ -1,10 +1,10 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user-form',
@@ -15,6 +15,9 @@ import {MatButtonModule} from '@angular/material/button';
 })
 
 export class CreateUserFormComponent {
+
+  readonly dialogRef = inject(MatDialogRef<CreateUserFormComponent>);
+
   @Output()
   createUser = new EventEmitter();
 
@@ -33,8 +36,8 @@ export class CreateUserFormComponent {
   }),
 })
 
-  public submitForm(): void {
-    this.createUser.emit(this.form.value);
+  public submitForm() {
+    this.dialogRef.close(this.form.value);
     this.form.reset();
 }
 }

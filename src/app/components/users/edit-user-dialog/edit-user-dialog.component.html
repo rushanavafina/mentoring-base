@@ -1,0 +1,31 @@
+<!-- <h1>{{data.user.name}}</h1> -->
+<form class="create-user" 
+[formGroup]="form">
+    <mat-form-field>
+        <mat-label>Введите имя пользователя</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Введите email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Введите website</mat-label>
+        <input matInput formControlName="website">
+        <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <mat-form-field formGroupName="company">
+        <mat-label>Введите company</mat-label>
+        <input matInput formControlName="name">
+        <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+    <button type="submit" matIconSuffix mat-raised-button [disabled]="form.invalid" 
+    [mat-dialog-close]="userWithUpdatedFields">РЕДАКТИРОВАТЬ
+    <mat-icon>add</mat-icon>
+    </button>
+</form>
