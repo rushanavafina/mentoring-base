@@ -42,12 +42,7 @@ export class UsersComponent {
   }
 
   editUser(user: User) {
-    this.usersService.editUser({
-      ...user,
-      company: {
-        name: user.company.name,
-    },
-  });
+    this.usersService.editUser(user);
   }
 
   public createUser(formDate: createUser) {

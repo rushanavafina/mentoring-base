@@ -33,7 +33,7 @@ export class UserCardComponent {
       data: {user: this.user},
     });
 
-    dialogRef.afterClosed().subscribe((result: boolean | boolean) => {
+    dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
         this.deleteUser.emit(this.user.id);
         this.snackBar.open('Пользователь успешно удален', 'ОК', {
